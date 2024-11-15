@@ -1,0 +1,84 @@
+.app-background {
+  position: relative;
+  overflow-y: auto;
+  overflow: hidden;
+  z-index: 0; /* Set a baseline z-index for the container */
+}
+
+/* Create stars */
+.app-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  animation: starryMove 60s linear infinite;
+  z-index: -1; /* Ensure background stars are below the main content */
+}
+.pyramide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.pyramide-layer {
+  position: relative;
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+  background-color: #87a7df; /* Couleur de fond */
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pyramide-layer:nth-child(1) { width: 20%; }
+.pyramide-layer:nth-child(2) { width: 35%; }
+.pyramide-layer:nth-child(3) { width: 50%; }
+.pyramide-layer:nth-child(4) { width: 65%; }
+.pyramide-layer:nth-child(5) { width: 80%; }
+
+.pyramide-layer:hover {
+  background-color: #357ABD; /* Couleur au survol */
+}
+
+.definition {
+  margin-top: 5px;
+  background-color: #b8b8b8;
+  color: #000000;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  text-align: center;
+  width: 100%;
+}
+
+/* Add a slow, subtle moving animation for the stars */
+@keyframes starryMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-200px, -200px);
+  }
+}
+
+@keyframes customPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.custom-animate-pulse {
+  animation: customPulse 1.5s ease-in-out infinite;
+}

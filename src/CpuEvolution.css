@@ -1,0 +1,54 @@
+.cpu-evolution-container {
+ 
+    overflow-x: auto;
+
+    padding: 20px;
+  }
+  
+  .timeline-horizontal {
+    display: flex;
+    gap: 30px;
+    position: relative;
+    align-items: center;
+  }
+  
+  .timeline-item {
+    display: inline-block;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .timeline-content {
+    margin-bottom: 10px;
+  }
+  
+  .timeline-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Horizontal scale line */
+  .timeline-horizontal:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: white;
+    z-index: -1;
+    transform: translateY(-50%);
+  }
+  
